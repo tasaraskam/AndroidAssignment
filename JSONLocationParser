@@ -1,0 +1,41 @@
+package gr.hua.dit.androidassignment;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import gr.hua.dit.androidassignment.Location;
+/**
+ * Created by Tasos Theocharis on 31/1/2017.
+ */
+
+public class LocationJSONParser {
+    public static List<Location> parseFeed(String content) throws JSONException {
+        try {
+            JSONArray ar = new JSONArray(content);
+            List<Location> locationList = new ArrayList<>();
+
+            for (int i = 0; i < ar.length(); i++) {
+                JSONObject obj = ar.getJSONObject(i);
+                Location location = new Location();
+
+                location.setId(obj.getInt("id"));
+                location.setUserid(obj.getString("userid"));
+                location.setLongitude((float) obj.getDouble("longitude"));
+                location.setLatitude((float) obj.getDouble("latitude"));
+                location.setDt(obj.getString("dt"));
+
+                locationList.add(location);
+
+            }
+            return locationList;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+
+        }
+
+    }
+}
