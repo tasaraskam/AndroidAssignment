@@ -1,0 +1,54 @@
+package gr.hua.dit.androidassignment;
+
+/**
+ * Created by Tasos Theocharis on 31/1/2017.
+ */
+
+public class Location {
+    private int id;
+    private String userid;
+    private float longitude;
+    private float latitude;
+    private String dt;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+
+    public String getDt() {
+        return dt;
+    }
+
+    public void setDt(String dt) {
+        this.dt = dt;
+    }
+}
