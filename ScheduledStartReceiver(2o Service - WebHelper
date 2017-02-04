@@ -16,7 +16,7 @@ public class ScheduledStartReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent();
-        i.setClass(context, StartReceiver.class);
+        i.setClass(context, WebHelper.class);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0 , i , PendingIntent.FLAG_CANCEL_CURRENT);
         Calendar calendar = Calendar.getInstance();
         Calendar.add(Calendar.MINUTE,10);
