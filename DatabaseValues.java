@@ -41,4 +41,14 @@ public class DatabaseValues extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+    
+    public void insertValues(int id, String userid, float longitude, float latitude, String dt) {
+        ContentValues values = new ContentValues();
+        values.put(String.valueOf(KEY_ID),id);
+        values.put(KEY_USERID, userid);
+        values.put(String.valueOf(KEY_LONGITUDE), longitude);
+        values.put(String.valueOf(KEY_LATITUDE), latitude);
+        values.put(KEY_DT, dt);
+
+    }
 }
